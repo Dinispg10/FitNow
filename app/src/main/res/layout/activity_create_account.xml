@@ -1,0 +1,72 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:padding="32dp" android:orientation="vertical"
+    android:gravity="center" android:background="#141B2D">
+
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nome"
+        android:inputType="textPersonName"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#8EA5BA"
+        android:padding="16dp"
+        android:background="@drawable/input_background"
+        android:layout_marginBottom="16dp" />
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#8EA5BA"
+        android:padding="16dp"
+        android:background="@drawable/input_background"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Senha"
+        android:inputType="textPassword"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#8EA5BA"
+        android:padding="16dp"
+        android:background="@drawable/input_background"
+        android:layout_marginBottom="16dp"/>
+
+
+
+    <EditText
+        android:id="@+id/etConfirmPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Confirmar senha"
+        android:inputType="textPassword"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#8EA5BA"
+        android:padding="16dp"
+        android:background="@drawable/input_background"
+        android:layout_marginBottom="24dp"/>
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Criar conta"
+        android:backgroundTint="#24D1B5"
+        android:textColor="#141B2D"/>
+
+    <Button
+        android:id="@+id/btnBackLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fazer Login"
+        android:backgroundTint="#24D1B5"
+        android:textColor="#141B2D"/>
+</LinearLayout>

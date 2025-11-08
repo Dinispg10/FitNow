@@ -1,0 +1,78 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#141B2D">
+
+    <!-- Conteúdo principal com padding -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="24dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Logotipo e menu -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/logo" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FitNow"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="8dp"/>
+            </LinearLayout>
+
+            <!-- Pesquisa -->
+            <EditText
+                android:id="@+id/edtSearch"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:background="#232842"
+                android:textColor="#FFFFFF"
+                android:hint="Buscar treinos, categorias..."
+                android:drawableStart="@android:drawable/ic_menu_search"
+                android:padding="12dp"
+                android:textSize="16sp"
+                android:layout_marginVertical="14dp"/>
+
+            <!-- Em destaque -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Em destaque" android:textColor="#FFFFFF" android:textStyle="bold" android:textSize="16sp"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="8dp">
+                <!-- Exemplo HIIT -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="70dp" android:background="#232842" android:orientation="horizontal" android:padding="12dp" android:gravity="center_vertical">
+                    <ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/ic_fire" android:tint="#90CDE6" />
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="10dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="HIIT 20 min" android:textColor="#FFFFFF" android:textStyle="bold" android:textSize="16sp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Favorito • 6 exercícios • Cardio" android:textColor="#B6EAE8" android:textSize="12sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <!-- Adiciona mais cards conforme necessário -->
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Botão flutuante -->
+    <Button
+        android:id="@+id/btnNovoTreino"
+        android:layout_width="180dp"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:text="Novo treino"
+        android:textStyle="bold"
+        android:textColor="#141B2D"
+        android:backgroundTint="#24D1B5"
+        android:drawableLeft="@drawable/ic_add"/>
+</RelativeLayout>
