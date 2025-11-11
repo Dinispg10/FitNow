@@ -1,41 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#121212"
-    android:padding="24dp">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#141B2D"
+            android:padding="16dp">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
+        <!-- Foto -->
+        <ImageView
+                android:id="@+id/ivFotoPerfil"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/ic_person"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center_horizontal"
+                android:background="#232842"
+                android:padding="8dp" />
+
+        <Button
+                android:id="@+id/btnEscolherFoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Escolher foto"
+                android:textAllCaps="false"
+                android:layout_marginTop="12dp"
+                android:layout_gravity="center_horizontal" />
+
+        <!-- Nome -->
+        <EditText
+                android:id="@+id/etNomePerfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nome"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#9AA3B2"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="#B6EAE8" />
+
+        <!-- Sexo -->
+        <Spinner
+                android:id="@+id/spSexoPerfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp" />
+
+        <!-- Data de nascimento -->
+        <EditText
+                android:id="@+id/etDataNascimento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Data de nascimento (yyyy-MM-dd)"
+                android:focusable="false"
+                android:clickable="true"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#9AA3B2"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="#B6EAE8" />
+
+        <!-- Altura (cm) -->
+        <EditText
+                android:id="@+id/etAlturaCm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Altura (cm)"
+                android:inputType="number"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#9AA3B2"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="#B6EAE8" />
+
+        <!-- Peso (kg) -->
+        <EditText
+                android:id="@+id/etPesoKg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Peso (kg)"
+                android:inputType="numberDecimal"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#9AA3B2"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="#B6EAE8" />
+
+        <!-- IMC -->
         <TextView
-            android:id="@+id/tvTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Perfil"
-            android:textSize="28sp"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold"
-            android:layout_marginBottom="32dp" />
+                android:id="@+id/tvImcValor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="IMC: (—)"
+                android:textColor="#B6EAE8"
+                android:textSize="16sp"
+                android:layout_marginTop="12dp" />
 
         <Button
-            android:id="@+id/btnChangePassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Alterar Senha"
-            android:layout_marginTop="16dp"
-            android:backgroundTint="#FF0266"
-            android:textColor="#FFFFFF"/>
-        <Button
-            android:id="@+id/btnLogout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Logout"
-            android:layout_marginTop="16dp"
-            android:backgroundTint="#FF0266"
-            android:textColor="#FFFFFF"/>
+                android:id="@+id/btnGuardarPerfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Guardar"
+                android:textAllCaps="false"
+                android:layout_marginTop="20dp" />
     </LinearLayout>
 </ScrollView>

@@ -1,6 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#141B2D"
+            android:padding="16dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <!-- Cabeçalho do treino -->
+        <TextView
+                android:id="@+id/tvNomeTreinoDetalhe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nome do Treino"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:paddingBottom="8dp" />
+
+        <TextView
+                android:id="@+id/tvTipoTreinoDetalhe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tipo"
+                android:textColor="#B6EAE8"
+                android:textSize="16sp"
+                android:paddingBottom="4dp" />
+
+        <TextView
+                android:id="@+id/tvDuracaoTreinoDetalhe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Duração"
+                android:textColor="#B6EAE8"
+                android:textSize="16sp" />
+
+        <!-- Separador visual -->
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:background="#263046" />
+
+        <!-- Título da secção de exercícios -->
+        <TextView
+                android:id="@+id/tvTituloExercicios"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Exercícios"
+                android:textColor="#B6EAE8"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp" />
+
+        <!-- Lista de exercícios do treino -->
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerExerciciosDetalhe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:nestedScrollingEnabled="false"
+                android:overScrollMode="never" />
+
+        <!-- (Opcional) Mensagem de vazio; mostrar/ocultar via código -->
+        <TextView
+                android:id="@+id/tvExerciciosVazio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sem exercícios neste treino."
+                android:textColor="#7F8DA6"
+                android:textSize="14sp"
+                android:layout_marginTop="8dp"
+                android:visibility="gone" />
+
+    </LinearLayout>
+</ScrollView>
