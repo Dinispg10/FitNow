@@ -16,6 +16,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText etEmail, etPassword;
     private Button btnLogin;
+    private Button btnForgotPassword;
     private TextView tvCreateAccount;
     private FirebaseAuth mAuth;
 
@@ -27,6 +28,7 @@ public class LoginActivity extends AppCompatActivity {
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
+        btnForgotPassword = findViewById(R.id.btnChangePassword);
         tvCreateAccount = findViewById(R.id.tvCreateAccount);
 
         mAuth = FirebaseAuth.getInstance();
@@ -59,6 +61,10 @@ public class LoginActivity extends AppCompatActivity {
 
         tvCreateAccount.setOnClickListener(v -> {
             startActivity(new Intent(LoginActivity.this, CreateAccountActivity.class));
+        });
+
+        btnForgotPassword.setOnClickListener(v -> {
+            startActivity(new Intent(LoginActivity.this, ChangePasswordActivity.class));
         });
     }
 }

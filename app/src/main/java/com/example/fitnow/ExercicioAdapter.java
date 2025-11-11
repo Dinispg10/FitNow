@@ -14,17 +14,16 @@ import java.util.List;
 
 public class ExercicioAdapter extends RecyclerView.Adapter<ExercicioAdapter.ViewHolder> {
 
-    private List<Exercicio> exercicios;
-    private List<Exercicio> exerciciosSelecionados = new ArrayList<>();
-
-    private OnSelectionChangeListener selectionChangeListener;
+    private final List<Exercicio> exercicios = new ArrayList<>();
+    private final List<Exercicio> exerciciosSelecionados;
+    private final OnSelectionChangeListener selectionChangeListener;
 
     public interface OnSelectionChangeListener {
         void onSelectionChanged(List<Exercicio> selecionados);
     }
 
-    public ExercicioAdapter(List<Exercicio> exercicios, OnSelectionChangeListener listener) {
-        this.exercicios = exercicios;
+    public ExercicioAdapter(List<Exercicio> selecionados, OnSelectionChangeListener listener) {
+        this.exerciciosSelecionados = selecionados != null ? selecionados : new ArrayList<>();
         this.selectionChangeListener = listener;
     }
 
@@ -45,31 +44,48 @@ public class ExercicioAdapter extends RecyclerView.Adapter<ExercicioAdapter.View
 
         // Visual diferenciado para selecionado
         if (exerciciosSelecionados.contains(exercicio)) {
-            holder.itemView.setBackgroundColor(Color.parseColor("#408080")); // Exemplo cor para selecionado
+            holder.itemView.setBackgroundColor(Color.parseColor("#408080")); // Cor de seleção
         } else {
             holder.itemView.setBackgroundColor(Color.TRANSPARENT);
         }
 
         holder.itemView.setOnClickListener(v -> {
+            int adapterPosition = holder.getBindingAdapterPosition();
+            if (adapterPosition == RecyclerView.NO_POSITION) return;
+
             if (exerciciosSelecionados.contains(exercicio)) {
                 exerciciosSelecionados.remove(exercicio);
             } else {
                 exerciciosSelecionados.add(exercicio);
             }
-            notifyItemChanged(position);
+
+            notifyItemChanged(adapterPosition);
+
             if (selectionChangeListener != null) {
-                selectionChangeListener.onSelectionChanged(exerciciosSelecionados);
+                selectionChangeListener.onSelectionChanged(new ArrayList<>(exerciciosSelecionados));
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        return exercicios.size();
+        return exercicios == null ? 0 : exercicios.size();
     }
 
     public List<Exercicio> getExerciciosSelecionados() {
-        return exerciciosSelecionados;
+        return new ArrayList<>(exerciciosSelecionados);
+    }
+
+    public void atualizarDados(List<Exercicio> novosExercicios) {
+        exercicios.clear();
+        if (novosExercicios != null) {
+            exercicios.addAll(novosExercicios);
+        }
+        notifyDataSetChanged();
+
+        if (selectionChangeListener != null) {
+            selectionChangeListener.onSelectionChanged(new ArrayList<>(exerciciosSelecionados));
+        }
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

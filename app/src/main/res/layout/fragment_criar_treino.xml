@@ -1,71 +1,66 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent" android:layout_height="match_parent"
-              android:orientation="vertical" android:padding="16dp" android:background="#141B2D">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#141B2D">
 
     <EditText
-            android:id="@+id/editNomeTreino"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:hint="Nome do treino"
-            android:textColor="#FFFFFF"
-            android:textColorHint="#777"
-            android:padding="10dp"
-            android:background="#232842"
-            android:layout_marginBottom="16dp"/>
+        android:id="@+id/editNomeTreino"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Nome do treino"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#777"
+        android:padding="10dp"
+        android:background="#232842"
+        android:layout_marginBottom="16dp" />
 
     <Spinner
-            android:id="@+id/spinnerTipoTreino"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#232842"
-            android:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
-            android:layout_marginBottom="16dp"/>
+        android:id="@+id/spinnerParteCorpo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#232842"
+        android:layout_marginBottom="16dp"
+        android:visibility="gone" />
 
     <Spinner
-            android:id="@+id/spinnerParteCorpo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#232842"
-            android:layout_marginBottom="16dp"
-            android:visibility="gone"/>
-
-    <Spinner
-            android:id="@+id/spinnerExercicios"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#232842"
-            android:layout_marginBottom="16dp"
-            android:visibility="gone"/>
+        android:id="@+id/spinnerCategoria"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#232842"
+        android:layout_marginBottom="16dp"
+        android:popupTheme="@style/ThemeOverlay.AppCompat.Dark" />
 
     <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerExercicios"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:layout_marginBottom="16dp"
-            android:clipToPadding="false"
-            android:padding="4dp"
-    />
-
+        android:id="@+id/recyclerExercicios"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginBottom="16dp"
+        android:clipToPadding="false"
+        android:padding="4dp" />
 
     <EditText
-            android:id="@+id/editDuracao"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:hint="Duração (minutos)"
-            android:textColor="#FFFFFF"
-            android:textColorHint="#777"
-            android:padding="10dp"
-            android:background="#232842"
-            android:inputType="number"
-            android:layout_marginBottom="16dp" />
+        android:id="@+id/editDuracao"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Duração (minutos)"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#777"
+        android:padding="10dp"
+        android:background="#232842"
+        android:inputType="number"
+        android:layout_marginBottom="16dp" />
 
     <Button
-            android:id="@+id/btnSalvarTreino"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:text="Salvar Treino"
-            android:backgroundTint="#24D1B5"
-            android:textColor="#141B2D"
-            android:textStyle="bold"/>
+        android:id="@+id/btnSalvarTreino"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Salvar Treino"
+        android:textColor="#FFFFFF"
+        android:background="#408080"
+        android:padding="12dp"
+        android:textStyle="bold" />
+
 </LinearLayout>

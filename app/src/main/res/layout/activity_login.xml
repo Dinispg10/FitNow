@@ -99,6 +99,17 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp" />
 
+        <Button
+                android:id="@+id/btnForgotPassword"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="Entrar"
+                android:backgroundTint="#24D1B5"
+                android:textColor="#141B2D"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp" />
+
         <!-- Nova conta -->
         <LinearLayout
         android:layout_width="match_parent"
